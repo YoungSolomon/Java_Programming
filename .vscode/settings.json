@@ -1,9 +1,0 @@
-{
-    "java.project.sourcePaths": [
-        "Module2_1/src"
-    ],
-    "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ]
-}
