@@ -24,20 +24,26 @@ public class eliminateDuplicates {
 
     }
 
-    public static int[] dupeElim(int[] list){
-        int[] result = {};
-        HashMap<Integer, String> map = new HashMap<Integer, String>();
+    private static int[] dupeElim(int[] list){
+        int[] result = new int[list.length];
 
         for (int i = 0; i < list.length - 1 ; i++){
-            boolean check = map.containsKey(list[i]);
-            if (check != true) {
-                map.put(list[i], "dupe");
-                result[i] = list[i];
-            } else {
+            boolean dupe = false;
+            for (int j = 0; j < list.length; j++){
+                if (list[i] == result[j]){
+                    dupe = true;
+                    break;
+                } 
+            }
+
+            if (dupe) {
                 continue;
             }
+
+            result[i] = list[i];
         }
 
-        return result;
+
+        return Arrays.stream(result).filter(num -> num != 0).toArray();
     }
 }
